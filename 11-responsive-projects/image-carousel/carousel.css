@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #0a0a0a;
+  /* background-color: white; */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel {
+  width: min(90%, 850px);
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+/* Hover Effect */
+.carousel:hover {
+  box-shadow: rgba(3, 98, 251, 0.4) 0px 30px 90px;
+}
+.slides {
+  height: 100%;
+  display: flex;
+  /* Removed because it caused image sizing issues */
+  /* width: 500%; */
+  animation: carousel 10s ease-in-out infinite;
+}
+@keyframes carousel {
+  0%,
+  15% {
+    transform: translateX(0);
+  }
+
+  20%,
+  35% {
+    transform: translateX(-100%);
+  }
+
+  40%,
+  55% {
+    transform: translateX(-200%);
+  }
+
+  60%,
+  75% {
+    transform: translateX(-300%);
+  }
+
+  80%,
+  100% {
+    transform: translateX(-400%);
+  }
+}
+.slide {
+  height: 100%;
+  width: 100%;
+  flex: 0 0 100%;
+  position: relative;
+}
+.slide > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.content {
+  width: 90%;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.content h2 {
+  font-size: 2rem;
+  padding-left: 15px;
+  letter-spacing: 1.5px;
+  font-family: "Sedgwick Ave Display", cursive;
+}
+.content p {
+  font-size: 0.9rem;
+  /* line-height: 1.5; */
+  font-family: "Jost", cursive;
+  text-transform: capitalize;
+  letter-spacing: 2.5px;
+  font-variant: small-caps;
+  margin-bottom: 10px;
+}
+.content p::first-letter {
+  font-size: 1.4rem;
+}
+
+/* Media Query for responsive text */
+@media (max-width: 600px) {
+  .content {
+    left: 15px;
+    right: 15px;
+    width: auto;
+  }
+
+  .content h2 {
+    font-size: 1.3rem;
+  }
+
+  .content p {
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+  }
+  .content p::first-letter {
+    font-size: 0.7rem;
+  }
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  /* color: rgb(246, 243, 243); */
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8),
+    transparent
+  );
+}
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 50%;
+  background: #bbb;
+}
+
+.dots .active {
+  background: #fff;
+  transform: scale(1.2);
+}
