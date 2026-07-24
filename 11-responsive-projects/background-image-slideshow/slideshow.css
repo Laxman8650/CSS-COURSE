@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+/* Slideshow animation */
+.img-container {
+  width: min(90%, 900px);
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  background-image: url("/assets/images/money.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  animation: slideshow 14s ease-in-out infinite;
+}
+/* keyframes for image slide */
+@keyframes slideshow {
+  20% {
+    background-image: url("/assets/images/joker.jpg");
+  }
+  33% {
+    background-image: url("/assets/images/moon_knight.jpg");
+  }
+  66% {
+    background-image: url("/assets/images/red.jpg");
+  }
+  86% {
+    background-image: url("/assets/images/win.webp");
+  }
+  100% {
+    background-image: url("/assets/images/kartoos.jpg");
+  }
+}
