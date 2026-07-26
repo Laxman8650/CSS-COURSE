@@ -9,51 +9,151 @@ body {
   width: 100%;
   font-family: jost;
 }
-.nav-container {
+/* For full Navbar */
+.navbar {
   height: 7%;
   max-width: 100%;
   background-color: rgba(204, 204, 204, 0.3);
-  display: block;
   box-shadow:
     rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-}
-.navbar {
-  height: 100%;
-  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 30px;
+  padding-inline: 1rem;
+}
+
+/* For apple logo */
+.logo {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: black;
+  transition: color 0.9s ease;
+}
+.logo:hover {
+  color: rgba(255, 0, 0, 0.826);
+}
+
+/* This is a menu section */
+/* Target all a tag */
+.menu a {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.736);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 420;
+  transition: transform 0.5s ease-in-out;
 }
 .navbar ul {
   display: flex;
   gap: 2.1rem;
   list-style-type: none;
 }
-i {
-  font-size: 1.4rem;
+/* This hover use in menu */
+.navbar ul li a:hover {
+  transform: scale(1.09);
+  color: rgb(9, 129, 150);
 }
-a {
-  color: rgba(0, 0, 0, 0.736);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 420;
+.menu ul li {
+  display: flex;
+  align-items: center;
 }
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+/* This is the search box(icon & input filed) section */
 .search-container {
-  /* height: 90px; */
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
+  border-radius: 1%;
 }
 .search-container input {
-  width: 0px;
+  width: 0;
   opacity: 0;
   visibility: hidden;
+  margin: 0;
+  transition: all 0.8s ease;
 }
 .search-container:focus-within input {
   width: 120px;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 5px;
   opacity: 1;
   visibility: visible;
+  border: 0.5px dashed;
+  color: rgb(76, 22, 225);
+}
+.search-container input:focus {
+  border: none;
+  outline: none;
+  box-shadow:
+    rgba(0, 0, 0, 0.19) 0px 10px 20px,
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+input::placeholder {
+  color: #a0a0a0;
+}
+.search-container button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+.actions button i {
+  font-size: 1.2rem;
+}
+
+.hc-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.hc-container a > i {
+  display: inline-block;
+  color: black;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+.hc-container a :hover {
+  color: fuchsia;
+  text-shadow: rgba(0, 0, 0, 0.326) 0px 0px 25px;
+  transform: scale(1.1);
+}
+.hamburger {
+  display: none;
+}
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    border: none;
+  }
+  .actions {
+    gap: 25px;
+  }
+}
+/* Hamburger Drawer Creation Steps*/
+
+#menu-toggle {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  position: absolute;
 }
