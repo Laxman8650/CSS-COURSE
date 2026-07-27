@@ -1,3 +1,7 @@
+/* ==========================================
+   Global Reset
+   Removes default browser spacing
+========================================== */
 * {
   margin: 0;
   padding: 0;
@@ -5,27 +9,36 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   font-family: jost;
 }
-/* For full Navbar */
+/* ==========================================
+   Fixed Navigation Bar
+   Stays at the top of the viewport
+========================================== */
 .navbar {
-  height: 7%;
-  max-width: 100%;
-  background-color: rgba(204, 204, 204, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 56px;
+  width: 100%;
+  z-index: 100;
+  background: #ffffff;
   box-shadow:
     rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 30px;
   padding-inline: 1rem;
 }
 
-/* For apple logo */
+/* ==========================================
+   Brand Logo
+========================================== */
 .logo {
   font-size: 1.4rem;
   text-decoration: none;
@@ -36,8 +49,10 @@ body {
   color: rgba(255, 0, 0, 0.826);
 }
 
-/* This is a menu section */
-/* Target all a tag */
+/* ==========================================
+   Desktop Navigation Links
+========================================== */
+
 .menu a {
   display: inline-block;
   color: rgba(0, 0, 0, 0.736);
@@ -61,13 +76,10 @@ body {
   align-items: center;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-/* This is the search box(icon & input filed) section */
+/* ==========================================
+   Search Box with Expand Animation
+========================================== */
+
 .search-container {
   height: 100%;
   display: flex;
@@ -81,7 +93,10 @@ body {
   opacity: 0;
   visibility: hidden;
   margin: 0;
-  transition: all 0.8s ease;
+  transition:
+    width 0.8s ease,
+    opacity 0.8s ease,
+    visibility 0.8s ease;
 }
 .search-container:focus-within input {
   width: 120px;
@@ -113,10 +128,19 @@ input::placeholder {
   cursor: pointer;
   outline: none;
 }
+/* ==========================================
+   Action Icons
+   Search | Cart | Hamburger
+========================================== */
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 .actions button i {
   font-size: 1.2rem;
 }
-
 .hc-container {
   display: flex;
   align-items: center;
@@ -129,7 +153,7 @@ input::placeholder {
   font-size: 1.2rem;
   transition: transform 0.3s ease;
 }
-.hc-container a :hover {
+.hc-container a :hover i {
   color: fuchsia;
   text-shadow: rgba(0, 0, 0, 0.326) 0px 0px 25px;
   transform: scale(1.1);
@@ -137,7 +161,22 @@ input::placeholder {
 .hamburger {
   display: none;
 }
-@media (max-width: 768px) {
+/* ==========================================
+   Responsive Breakpoints
+========================================== */
+@media (max-width: 1200px) {
+  .navbar ul {
+    gap: 1.4rem;
+  }
+
+  .menu a {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 992px) {
+  .navbar {
+    justify-content: space-between;
+  }
   .menu {
     display: none;
   }
@@ -148,12 +187,97 @@ input::placeholder {
   .actions {
     gap: 25px;
   }
+  .mobile-menu,
+  .overlay {
+    display: block;
+  }
 }
-/* Hamburger Drawer Creation Steps*/
+@media (max-width: 576px) {
+  .actions {
+    gap: 15px;
+  }
+
+  .mobile-menu {
+    width: min(85%, 340px);
+    font-size: 1.1rem;
+  }
+}
+
+/* ==========================================
+   Mobile Navigation Drawer
+========================================== */
 
 #menu-toggle {
   opacity: 0;
   visibility: hidden;
   height: 0;
   position: absolute;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 56px;
+  right: 0;
+  z-index: 90;
+  height: calc(100vh - 56px);
+  width: 80%;
+  box-shadow: none;
+  background: #ecf1f0;
+  padding: 20px;
+  transform: translateX(100%);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+#menu-toggle:checked ~ .mobile-menu {
+  transform: translateX(0);
+  box-shadow:
+    rgba(9, 30, 66, 0.25) -8px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) -5px 0px 0px 1px;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.mobile-menu li {
+  transition:
+    background 0.2s,
+    border-radius 0.2s,
+    margin 0.2s ease-in-out;
+}
+.mobile-menu li:hover {
+  width: fit-content;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+.mobile-menu a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-size: 1.2rem; /* 16px */
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+/* ==========================================
+   Screen Overlay
+========================================== */
+.overlay {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  z-index: 80;
+  width: 100%;
+  height: calc(100vh - 56px);
+  background: rgba(85, 87, 87, 0.496);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+#menu-toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
 }

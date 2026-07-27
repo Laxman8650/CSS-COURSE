@@ -15,37 +15,9 @@
     />
   </head>
   <body>
-    <!-- <section class="nav-container">
-      <nav class="navbar">
-        <ul>
-          <li><i class="ri-apple-fill"></i></li>
-          <li><a href="#">Store</a></li>
-          <li><a href="#">Mac</a></li>
-          <li><a href="#">iPad</a></li>
-          <li><a href="#">iPhone</a></li>
-          <li><a href="#">Watch</a></li>
-          <li><a href="#">AirPods</a></li>
-          <li><a href="#">TV&Home</a></li>
-          <li><a href="#">Entertainment</a></li>
-          <li><a href="#">Accessories</a></li>
-          <li><a href="#">Support</a></li>
-          <li>
-            <div class="search-container">
-              <input type="text" name="text" />
-              <button><i class="ri-search-line"></i></button>
-            </div>
-          </li>
-          <div class="cart">
-            <a href="#"><i class="ri-shopping-bag-2-fill"></i></a>
-          </div>
-        </ul>
-      </nav>
-    </section>
-    <section class="hero-container">
-      <p>This is apple Navbar</p>
-    </section> -->
+    <!-- Hidden checkbox used to toggle the mobile drawer -->
     <input type="checkbox" id="menu-toggle" />
-    <section class="navbar">
+    <nav class="navbar">
       <a class="logo" href="#"><i class="ri-apple-fill"></i></a>
       <div class="menu">
         <ul>
@@ -63,19 +35,18 @@
       </div>
       <div class="actions">
         <div class="search-container">
-          <input type="text" name="text" placeholder="Search/Enter" />
+          <input type="search" name="text" placeholder="Search/Enter" />
           <button><i class="ri-search-line"></i></button>
         </div>
         <div class="hc-container">
           <a href="#"><i class="ri-shopping-bag-2-fill"></i></a>
-
           <label class="hamburger" for="menu-toggle">
             <i class="ri-menu-5-line"></i>
           </label>
         </div>
       </div>
-    </section>
-
+    </nav>
+    <!-- Mobile Navigation Drawer -->
     <section class="mobile-menu">
       <ul>
         <li><a href="#">Store</a></li>
@@ -90,5 +61,6 @@
         <li><a href="#">Support</a></li>
       </ul>
     </section>
+    <label for="menu-toggle" class="overlay"></label>
   </body>
 </html>
