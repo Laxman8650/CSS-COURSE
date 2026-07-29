@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Distressed&family=Sedgwick+Ave+Display&family=Smooch+Sans:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/css/flowsync.css" />
   </head>
   <body>
@@ -67,19 +71,97 @@
                 <aside class="dashboard-sidebar">
                   <div class="sidebar-logo"></div>
                   <ul>
-                    <li>Dashboard</li>
-                    <li>Projects</li>
-                    <li>Teams</li>
-                    <li>Reports</li>
+                    <li><a class="active" href="#">Dashboard</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Teams</a></li>
+                    <li><a href="#">Reports</a></li>
                   </ul>
                 </aside>
 
                 <div class="dashboard-main">
-                  <div class="stats-cards"></div>
+                  <div class="stats-cards">
+                    <div class="card">
+                      <h2>128</h2>
+                      <p>Total Projects</p>
+                    </div>
 
-                  <div class="chart-section"></div>
+                    <div class="card">
+                      <h2>25</h2>
+                      <p>Active Teams</p>
+                    </div>
 
-                  <div class="activity-section"></div>
+                    <div class="card">
+                      <h2>92%</h2>
+                      <p>Progress</p>
+                    </div>
+
+                    <div class="card">
+                      <h2>₹48K</h2>
+                      <p>Revenue</p>
+                    </div>
+                  </div>
+
+                  <div class="chart-section">
+                    <h3>Performance</h3>
+
+                    <div class="chart">
+                      <div class="line"></div>
+
+                      <div class="dot d1"></div>
+                      <div class="dot d2"></div>
+                      <div class="dot d3"></div>
+                      <div class="dot d4"></div>
+                      <div class="dot d5"></div>
+                      <div class="dot d6"></div>
+
+                      <div class="months">
+                        <span>Jan</span>
+                        <span>Feb</span>
+                        <span>Mar</span>
+                        <span>Apr</span>
+                        <span>May</span>
+                        <span>Jun</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="activity-section">
+                    <h3>Recent Activity</h3>
+
+                    <div class="activity-item">
+                      <span class="activity-icon"
+                        ><i class="ri-verified-badge-fill"></i
+                      ></span>
+                      <div class="activity-info">
+                        <h4>New Project Created</h4>
+                        <p>2 minutes ago</p>
+                      </div>
+                    </div>
+
+                    <div class="activity-item">
+                      <span class="activity-icon">🤝</span>
+                      <div class="activity-info">
+                        <h4>Team Joined</h4>
+                        <p>15 minutes ago</p>
+                      </div>
+                    </div>
+
+                    <div class="activity-item">
+                      <span class="activity-icon">📅</span>
+                      <div class="activity-info">
+                        <h4>Meeting Completed</h4>
+                        <p>1 hour ago</p>
+                      </div>
+                    </div>
+
+                    <div class="activity-item">
+                      <span class="activity-icon">📈</span>
+                      <div class="activity-info">
+                        <h4>Weekly Report Generated</h4>
+                        <p>Today</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
