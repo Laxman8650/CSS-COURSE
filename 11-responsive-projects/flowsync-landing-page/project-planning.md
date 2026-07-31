@@ -239,10 +239,10 @@ flowsync-landing-page/
 
 # 📄 Website Sections
 
-- [x] Navbar
+- [✓] Navbar
 - [✓] Hero
-- [ ] Trusted Companies
-- [ ] Features
+- [✓] Trusted Companies
+- [✓] Features
 - [ ] How It Works
 - [ ] Statistics
 - [ ] Pricing
@@ -273,9 +273,9 @@ flowsync-landing-page/
 
 - [x] Semantic Structure
 - [x] Navbar
-- [ ] Hero
-- [ ] Trusted
-- [ ] Features
+- [x] Hero
+- [x] Trusted
+- [x] Features
 - [ ] Statistics
 - [ ] Pricing
 - [ ] Testimonials
@@ -289,9 +289,9 @@ flowsync-landing-page/
 - [x] Reset
 - [x] Container
 - [x] Navbar Layout
-- [ ] Hero Layout
-- [ ] Buttons
-- [ ] Cards
+- [x] Hero Layout
+- [x] Buttons
+- [x] Cards
 - [ ] Sections
 - [ ] Footer
 - [ ] Responsive Design
