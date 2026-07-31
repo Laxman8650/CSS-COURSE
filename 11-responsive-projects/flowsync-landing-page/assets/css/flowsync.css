@@ -617,3 +617,61 @@ a {
   border-radius: 5px;
   margin: 70px 0 20px 0;
 }
+.features .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: 100px;
+}
+.features-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+.section-tag {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Roboto Mono", monospace;
+  padding: 10px;
+  background-color: #effaff;
+  border-radius: 30px;
+}
+.features-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: "Cinzel", serif;
+  word-spacing: 10px;
+}
+.features-header h2 span {
+  background: linear-gradient(90deg, #ff007f, #191819);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.features-header h2::first-letter {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #ff007f, #191819);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.features-header p {
+  max-width: 750px;
+  font-family: "Source Sans 3", sans-serif;
+  text-align: center;
+  line-height: 1.6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  word-spacing: 2px;
+  padding: 15px;
+  box-shadow:
+    rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  background: linear-gradient(to right, rgb(244, 245, 245), rgb(214, 248, 210));
+  /* border: 1px solid #ccc; */
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
