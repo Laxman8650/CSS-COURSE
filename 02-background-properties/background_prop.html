@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>B.G Property</title>
     <style>
-      .main {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* .main {
         width: 1000px;
         height: 500px;
         border: 2px solid;
@@ -16,32 +21,40 @@
         text-transform: capitalize;
         text-shadow: 0px 3px 3px rgb(88, 77, 77);
         /* display: flex; */
-        /* align-items: center; */
-        /* Image Set proerty with css method */
-        background: url("/assets/images/aalo_tikki.jpg");
-        background-repeat: no-repeat;
-        /* Sets where the background image is placed inside the container */
-        /* background-position: center; */
-        background-size: cover;
-      }
-      /* .main2 {
-        width: 100%;
-        height: 800px;
-        border: 2px solid;
-        color: white;
-        text-shadow: 7px 0px 5px black;
-        /* background-size: cover; */
-      /* background: url("/assets/images/mohi.avif"); */
-      /* Background Size:cover will not work if placed above the background shorthand property.  */
+      /* align-items: center; */
+      /* Image Set proerty with css method */
+      /* background: url("/assets/images/aalo_tikki.jpg"); */
+      /* background-repeat: no-repeat; */
+      /* Sets where the background image is placed inside the container */
+      /* background-position: center; */
       /* background-size: cover; */
-      /* It's called Parallex Effect */
-      /* B.G attachment propertykeeps the background image fixed while the content scrools over it */
-      /* background-attachment: fixed; */
-      /*}*/
+      /* }  */
+      .main2 {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        color: white;
+        padding: 10px;
+        text-shadow: 2px 0px 5px black;
+        background:
+          linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.273),
+            rgba(255, 255, 255, 0.047)
+          ),
+          url("/assets/images/mohi.avif");
+        background-repeat: no-repeat;
+        /* Background Size:cover will not work if placed above the background shorthand property.  */
+        background-size: cover;
+        /* background-position: center; */
+        /* It's called Parallex Effect */
+        /* B.G attachment propertykeeps the background image fixed while the content scrools over it */
+        /* background-attachment: fixed; */
+      }
     </style>
   </head>
   <body>
-    <div class="main">This Is Allo Tikki</div>
+    <!-- <div class="main">This Is Allo Tikki</div> -->
     <div class="main2">
       <h1>My Name Is Laxman</h1>
       <p>
