@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pseudo Classes</title>
     <style>
-      body {
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
         background-color: #efe30043;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
       }
       /* Direct Element Selector */
       p {
@@ -14,7 +23,21 @@
         text-align: center;
         text-decoration: dashed black underline;
       }
+      .main {
+        width: 70%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+      }
 
+      .names {
+        display: grid;
+        grid-template-columns: 1fr;
+        /* place-items: start; */
+        gap: 15px;
+      }
       /* Class or Element Selector */
       /* .main p {
         color: red;
@@ -25,12 +48,14 @@
         color: red;
       } */
 
-      .main :nth-child(even) {
+      .names :nth-child(2),
+      .names :nth-child(4) {
         color: red;
         text-align: center;
         text-decoration: none;
       }
-      .main :nth-child(odd) {
+      .names :nth-child(1),
+      .names :nth-child(3) {
         color: blue;
         text-align: center;
         text-decoration: none;
@@ -38,13 +63,14 @@
       .main1 {
         height: 200px;
         width: 200px;
-        background: red;
+        color: rgb(250, 249, 249);
+        background: rgb(255, 0, 221);
         border-radius: 4px;
         box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.5);
         transition: all 0.3s ease;
-        text-align: center;
         box-sizing: border-box;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: auto;
@@ -70,28 +96,44 @@
         transform: scale(0.95);
         box-shadow: 5px 7px 6px rgba(0, 0, 0, 0.5);
       }
-      body h3 {
-        color: rgb(17, 16, 16);
+      h3 {
+        margin-top: 20px;
+
         font-family: cursive;
-        text-decoration: rgb(228, 47, 47) dashed underline;
-        margin-left: 35px;
+        text-align: center;
         word-spacing: 3px;
+      }
+      h4 {
+        font-family: cursive;
+        margin-top: 50px;
+        text-align: center;
+        word-spacing: 3px;
+      }
+      .main1 b {
+        font-variant: small-caps;
       }
     </style>
   </head>
   <body>
-    <h3>
-      &bull;Defination: Pseudo Class use for change the specific state of
-      element(Such as: hover, active), Syntax:.class:hover{properties:value;},
-      use of samicolon(:).
-    </h3>
-    <div class="main">
-      <p>Mohit</p>
-      <p>Rahul</p>
-      <p>Summit</p>
-      <p>Karan</p>
+    <div class="container">
+      <h3>
+        &bull;Defination: Pseudo Class use for change the specific state of
+        element(Such as: hover, active).
+      </h3>
+      <h4>Syntax:.class:hover{properties:value;}, use of samicolon(:).</h4>
+      <div class="main">
+        <div class="names">
+          <p>Mohit</p>
+          <p>Rahul</p>
+          <p>Summit</p>
+          <p>Karan</p>
+        </div>
+
+        <div class="main1" tabindex="0">
+          <p>Hover this box</p>
+          <b>My name is Laxman</b>
+        </div>
+      </div>
     </div>
-    <p>Hi My name is Laxman</p>
-    <div class="main1" tabindex="0"><b>My name is mohit</b></div>
   </body>
 </html>
