@@ -770,14 +770,14 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 3.5rem;
-  padding: 1rem 2rem;
+  padding: 0 2rem 4rem 2rem;
   position: relative;
 
   /* min-height: 220vh; */
 }
 .how-it-works {
   position: relative;
-  background-color: #f4f2fb;
+  background: #e4e7ec;
 }
 .how-it-works h2 {
   padding: 15px;
@@ -824,8 +824,10 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   gap: 2rem;
-  background: linear-gradient(135deg, #ffffff, #f8fbff);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #e4e7ec;
+  box-shadow:
+    10px 10px 20px #b8bec7,
+    -10px -10px 20px #ffffff;
   border-radius: 24px;
   overflow: hidden;
   position: relative;
@@ -860,15 +862,19 @@ a {
   border-radius: 15px;
   font-weight: 600;
   margin-inline: 10px;
-  background-color: #0de965;
+  background-color: #98f8bf49;
 }
 .step-card h3 {
   display: inline-flex;
   align-items: center;
   gap: 12px;
   padding: 12px 22px;
-  border: 1px solid #d9d9d9;
+  /* border: 1px solid #d9d9d9; */
   border-radius: 90px;
+  color: #202b59;
+  box-shadow:
+    3px 3px 6px #b0b4bb,
+    -3px -3px 6px #ffffff;
   width: fit-content;
   transition: 0.5s ease;
 }
@@ -884,7 +890,10 @@ a {
   height: 40px;
   display: grid;
   place-items: center;
-  background: #dbeafe;
+  /* background: #dbeafe; */
+  box-shadow:
+    3px 3px 6px #b0b4bb,
+    -3px -3px 6px #ffffff;
   border-radius: 12px;
   transition: 0.5s ease;
 }
@@ -898,28 +907,66 @@ a {
   transform: translateX(-6px);
   box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
 }
+.step-card p {
+  color: #5a6072;
+  font-size: 1.1rem;
+  font-family: inter;
+}
+.step-card p span {
+  font-weight: 600;
+  background: linear-gradient(
+    45deg,
+    #5c5cf5,
+    #496dbc 33%,
+    #5693ef 67%,
+    #33b6ee 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .step-card a {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-
+  gap: 4px;
   width: max-content;
-
+  /* border: 1px solid #e7e4e4; */
+  background-color: #f2f1da5b;
+  box-shadow:
+    3px 3px 6px #b0b4bb,
+    -3px -3px 6px #ffffff;
+  border-radius: 20px;
+  padding: 10px;
   text-decoration: none;
-
   font-weight: 600;
+  position: relative;
+  overflow: hidden;
   color: #0f172a;
-
   transition: 0.3s ease;
 }
 .step-card a:hover {
   color: #4f46e5;
+  transform: scaleX(1.05);
+}
+.step-card a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: rgb(78, 163, 244);
+  transform: scale(0);
+  transition: 0.3s ease;
+}
+.step-card a:hover::before {
+  transform: scale(1.1);
 }
 .step-card a span {
   transition: 0.3s ease;
 }
 .step-card a:hover span {
-  transform: translateX(6px);
+  transform: translateX(4px);
 }
 .overlay-text {
   position: sticky;

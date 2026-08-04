@@ -243,7 +243,7 @@ flowsync-landing-page/
 - [✓] Hero
 - [✓] Trusted Companies
 - [✓] Features
-- [ ] How It Works
+- [✓] How It Works
 - [ ] Statistics
 - [ ] Pricing
 - [ ] Testimonials
