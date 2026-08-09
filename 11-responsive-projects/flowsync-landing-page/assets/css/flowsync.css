@@ -1273,3 +1273,260 @@ a {
   visibility: visible;
   transform: translateY(0);
 }
+/* 
+   PRICING CARDS
+ */
+
+.pricing-cards {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+/* Common card */
+.pricing-card {
+  position: relative;
+  min-height: 500px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #ffffff;
+  /* border: 1px solid #e5e7eb; */
+  border-radius: 20px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  transform-style: preserve-3d;
+  transition: 0.5s ease;
+}
+.pricing-card:hover {
+  transform: perspective(250px) rotateY(5deg);
+}
+
+/*
+   CARD HEADER
+*/
+.pricing-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.pricing-icon {
+  flex-shrink: 0;
+  font-size: 1.8rem;
+}
+
+.pricing-icon i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+}
+
+/* Header text */
+.pricing-card-header-right h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.pricing-card-header-right p {
+  width: 180px;
+  margin-top: 0.4rem;
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+/* CARD COLORS*/
+/* Starter */
+.starter-card {
+  border-color: #dbeafe;
+}
+
+.starter-card .pricing-icon i {
+  color: #2563eb;
+  background-color: #e0f2fe;
+}
+
+.starter-card .pricing-price span {
+  color: #2563eb;
+}
+
+.starter-card .pricing-features i {
+  color: #2563eb;
+}
+
+/* Pro */
+
+.pro-card {
+  border-color: #c4b5fd;
+  /* box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15); */
+}
+
+.pro-card .pricing-icon i {
+  color: #7c3aed;
+  background-color: #ede9fe;
+}
+
+.pro-card .pricing-price span {
+  color: #6d5dfc;
+}
+
+.pro-card .pricing-features i {
+  color: #7c3aed;
+}
+
+/* Enterprise */
+
+.enterprise-card {
+  border-color: #a7f3d0;
+}
+
+.enterprise-card .pricing-icon i {
+  color: #10b981;
+  background-color: #d1fae5;
+}
+
+.enterprise-card .pricing-price span {
+  color: #10b981;
+}
+
+.enterprise-card .pricing-features i {
+  color: #10b981;
+}
+
+/*MOST POPULAR BADGE*/
+
+.popular-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* 
+   PRICE
+ */
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  position: relative;
+}
+
+.pricing-price span {
+  font-size: 2.7rem;
+  font-weight: 700;
+}
+
+.pricing-price small {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+/*FEATURES */
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.pricing-features li i {
+  font-size: 1rem;
+}
+
+/* BUTTON */
+
+.pricing-btn {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border: 1px solid;
+  border-radius: 24px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Starter button */
+.starter-card .pricing-btn {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.starter-card .pricing-btn:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Pro button */
+.pro-card .pricing-btn {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, #4169ff, #734bed);
+  color: #ffffff;
+}
+
+.pro-card .pricing-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Enterprise button */
+
+.enterprise-card .pricing-btn {
+  border-color: #10b981;
+  color: #10b981;
+}
+
+.enterprise-card .pricing-btn:hover {
+  background-color: #10b981;
+  color: #ffffff;
+}
+/* Pricing card hover */
+.pricing-price::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 180px;
+  height: 2px;
+  border-radius: 20px;
+  background-color: #a0a3a3;
+  transform: scale(0);
+  transition: 0.4s ease;
+}
+.pricing-price:hover::before {
+  transform: scale(1.1);
+}
