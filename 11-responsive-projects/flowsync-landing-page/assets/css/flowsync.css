@@ -1139,9 +1139,9 @@ a {
   content: "";
   position: absolute;
   top: 100%;
-  left: 31px;
+  left: 0;
   height: 3px;
-  width: 40px;
+  width: 100%;
   border-radius: 10px;
   background: linear-gradient(
     to right,
@@ -1169,4 +1169,107 @@ a {
   width: 80%;
   text-align: center;
   margin-bottom: 60px;
+}
+.pricing .container {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 2rem;
+}
+.pricing-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+.pricing-heading .bit-icon {
+  font-weight: 600;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 24px;
+  padding: 10px 13px;
+}
+.pricing-heading .bit-icon i {
+  color: rgb(61, 147, 239);
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+.pricing-heading h2 {
+  font-size: 2.8rem;
+  word-spacing: 2.5px;
+  margin-bottom: -20px;
+}
+.pricing-heading h2 span {
+  background: linear-gradient(135deg, #2966f4, #734bed);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.pricing-heading p {
+  width: 70%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4f4e4e;
+  margin-bottom: 20px;
+}
+.date-filter {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  position: relative;
+}
+
+.date-filter a {
+  flex: 1;
+  margin-inline: 5px;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  transition: 0.6s ease;
+  position: relative;
+}
+
+.date-filter .month-range:hover,
+.date-filter .year-range:hover {
+  background-color: blue;
+  color: white;
+}
+.tooltip {
+  position: absolute;
+  top: 5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #ecfdf3;
+  color: #16a34a;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.monthly-tooltip {
+  left: -95%;
+}
+
+.yearly-tooltip {
+  right: -98px;
+}
+
+.date-filter a:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
