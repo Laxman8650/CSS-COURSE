@@ -1288,7 +1288,7 @@ a {
 /* Common card */
 .pricing-card {
   position: relative;
-  min-height: 500px;
+  min-height: 480px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
