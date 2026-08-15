@@ -126,11 +126,8 @@ sans-serif
 # 📦 Border Radius
 
 Buttons : 10px
-
 Cards : 16px
-
 Inputs : 8px
-
 Badges : 999px
 
 ---
@@ -140,13 +137,15 @@ Badges : 999px
 Navbar
 
 ```
-0 2px 10px rgba(0,0,0,.08)
+rgba(160, 158, 158, 0.25) 0px 14px 28px,
+rgba(130, 129, 129, 0.22) 0px 10px 10px;
 ```
 
 Cards
 
 ```
-0 12px 30px rgba(0,0,0,.10)
+rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 ```
 
 Buttons
@@ -244,11 +243,11 @@ flowsync-landing-page/
 - [✓] Trusted Companies
 - [✓] Features
 - [✓] How It Works
-- [ ] Statistics
-- [ ] Pricing
-- [ ] Testimonials
-- [ ] FAQ
-- [ ] Footer
+- [✓] Statistics
+- [✓] Pricing
+- [✓] Testimonials
+- [✓] FAQ
+- [✓] Footer
 
 ---
 
@@ -260,8 +259,8 @@ flowsync-landing-page/
 - Feature Cards
 - Statistics
 - Pricing Cards
-- FAQ Accordion (Future JavaScript)
-- Testimonial Slider (Future JavaScript)
+- FAQ Accordion
+- Testimonial Slider
 - Mobile Drawer
 - Hover Animations
 
@@ -276,11 +275,11 @@ flowsync-landing-page/
 - [x] Hero
 - [x] Trusted
 - [x] Features
-- [ ] Statistics
-- [ ] Pricing
-- [ ] Testimonials
-- [ ] FAQ
-- [ ] Footer
+- [x] Statistics
+- [x] Pricing
+- [x] Testimonials
+- [x] FAQ
+- [x] Footer
 
 ---
 
@@ -292,20 +291,20 @@ flowsync-landing-page/
 - [x] Hero Layout
 - [x] Buttons
 - [x] Cards
-- [ ] Sections
-- [ ] Footer
-- [ ] Responsive Design
-- [ ] Animations
+- [x] Sections
+- [x] Footer
+- [x] Responsive Design
+- [x] Animations
 
 ---
 
 # 🐞 Bugs / Improvements
 
-- [ ] Improve navbar hover animation
-- [ ] Add smooth section transitions
-- [ ] Optimize spacing
-- [ ] Improve mobile drawer animation
-- [ ] Add accessibility improvements
+- [✓] Improve navbar hover animation
+- [✓] Add smooth section transitions
+- [✓] Optimize spacing
+- [✓] Improve mobile drawer animation
+- [✓] Add accessibility improvements
 
 ---
 
@@ -343,16 +342,3 @@ flowsync-landing-page/
 - [ ] README Completed
 - [ ] Git Commits Organized
 - [ ] GitHub Push
-
----
-
-# 📝 Git Commit History
-
-- [x] Initialize project
-- [x] Create semantic HTML structure
-- [x] Build responsive navbar
-- [ ] Build hero section
-- [ ] Add feature cards
-- [ ] Complete pricing section
-- [ ] Responsive improvements
-- [ ] Final UI polish
