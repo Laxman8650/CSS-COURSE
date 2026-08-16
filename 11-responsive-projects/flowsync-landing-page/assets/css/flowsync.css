@@ -8,10 +8,16 @@ a {
   text-decoration: none;
   color: black;
 }
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
 body {
   font-family: "Inter", sans-serif;
   color: #111827;
   background: #fefefe;
+  overflow-x: hidden;
+  width: 100%;
   /* padding-top: 90px; */
 }
 .container {
@@ -23,9 +29,9 @@ body {
 
 nav {
   height: 70px;
-  width: min(94%, 1320px);
   z-index: 1000;
   position: fixed;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   box-shadow:
@@ -36,9 +42,15 @@ nav {
   justify-content: space-between;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
+
   background: rgba(113, 112, 112, 0.056);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
+}
+
+nav.container {
+  width: min(94%, 1320px);
+  padding-inline: 1.5rem;
 }
 nav > a img {
   text-decoration: none;
@@ -114,6 +126,100 @@ nav > a img {
   background-color: rgb(255, 251, 6);
   padding: 6px 10px;
 }
+/* Ham-burger */
+#menu-toggle {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  position: absolute;
+}
+.ham-burger {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media (max-width: 900px) {
+  nav.container {
+    gap: 1rem;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    z-index: 1220;
+  }
+  .menu {
+    display: block;
+    position: fixed;
+    top: 70px;
+    right: -20px;
+    height: calc(100vh - 70px);
+    height: (
+      100dvh - 70px
+    ); /*accounts for mobile browser address-bar height changes */
+    width: min(78%, 300px);
+    background: #f8f9fd;
+    border-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.25) -12px 0 30px;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 950;
+    padding-top: 30px; /*clears the fixed navbar so links aren't hidden under it*/
+    overflow-y: auto;
+  }
+
+  #menu-toggle:checked ~ .menu {
+    transform: translate(0);
+  }
+  body:has(#menu-toggle:checked) nav {
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .menu ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+  .menu ul li {
+    border-bottom: 1px solid #cecaca;
+  }
+  .menu ul li a {
+    display: block;
+    padding: 16px 24px;
+  }
+  .menu ul li a::after {
+    display: none; /* the underline hover effect doesn't suit a drawer row */
+  }
+
+  /* Optional dark backdrop behind the drawer — needs one small HTML
+     addition, see notes below. Harmless if you skip it: it just won't
+     show, the drawer still slides in/out via the hamburger. */
+  .overlay {
+    position: fixed;
+    top: 100%;
+    left: -20px;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(154, 154, 154, 0.892);
+    opacity: 0;
+    z-index: 900;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+  }
+  #menu-toggle:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ham-burger {
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+    font-size: 1.6rem;
+    position: relative;
+    z-index: 1200; /* stays above the drawer/backdrop so it's always clickable to close */
+  }
+}
 
 .hero {
   /* padding-top: 130px; */
@@ -148,7 +254,8 @@ nav > a img {
   border-radius: 20px;
 }
 .hero-content p {
-  width: 580px;
+  width: 100%;
+  max-width: 580px;
   color: #090a09;
 }
 .hero-content P::first-letter {
@@ -193,6 +300,19 @@ nav > a img {
   font-size: 0.9rem;
   font-weight: 600;
   margin: 1.1rem 0;
+}
+/* The HTML wraps this badge's text in an <h2>. Browsers give h2 its own
+   default font-size (~1.5x parent) which overrides the 0.9rem above,
+   since an explicit (even default) rule always beats inheritance. That
+   made the pill render text much bigger than intended and overflow on
+   phones. Target the h2 directly to force the small size. */
+.badge h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+.badge {
+  max-width: 100%;
 }
 .primary-btn {
   /* width: 200px; */
@@ -1115,7 +1235,8 @@ nav > a img {
   -webkit-text-fill-color: transparent;
 }
 .section-heading p {
-  width: 480px;
+  width: 100%;
+  max-width: 480px;
   text-align: center;
   color: #464545;
   line-height: 1.5;
@@ -1390,7 +1511,8 @@ nav > a img {
 }
 
 .pricing-card-header-right p {
-  width: 180px;
+  width: 100%;
+  max-width: 220px;
   margin-top: 0.4rem;
 
   font-size: 0.85rem;
@@ -2133,4 +2255,372 @@ summary::-webkit-details-marker {
   font-size: 0.9rem;
   font-weight: 500;
   text-decoration: none;
+}
+
+/* =========================================================
+   RESPONSIVE MEDIA QUERIES
+   Strategy: this file was written "desktop-first" (base
+   rules target large screens), so every media query below
+   uses max-width and OVERRIDES the base rules for smaller
+   screens. Breakpoints used:
+     1024px -> small laptops / tablets (landscape)
+     900px  -> nav collapses into hamburger (already added above)
+     768px  -> tablets (portrait) / large phones -> start stacking
+     480px  -> phones -> single column, smaller type
+   ========================================================= */
+
+/* ---------- 1024px: tablets / small laptops ---------- */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+  .hero {
+    padding-block: 6rem;
+  }
+  .trusted-logos {
+    width: 90%;
+  }
+  .features .container {
+    padding: 4rem 2rem;
+  }
+  .feature-cards {
+    width: 90%;
+    gap: 30px;
+  }
+  .stat-container {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing-cards {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing-cards .pricing-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .testimonials-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* The connector line between step icons is a fixed 290px, so with real
+     content (3 icons) it overflows well before tablet width. It's purely
+     decorative (the actual step text lives in .steps below), so hide it
+     here instead of waiting until 768px. */
+  .steps-images {
+    display: none;
+  }
+}
+
+/* ---------- 768px: tablets (portrait) / large phones ---------- */
+@media (max-width: 768px) {
+  /* Hero: image below content instead of side-by-side */
+  .hero {
+    padding-block: 5rem;
+  }
+  .hero .container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .hero-content,
+  .hero-image {
+    flex: unset;
+    width: 100%;
+  }
+  .hero-content h1 {
+    font-size: 2.1rem;
+    max-width: 100%;
+  }
+  .hero-content p {
+    max-width: 100%;
+  }
+  .social-proof {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+
+  /* Dashboard mock scales with its column instead of a fixed 620px */
+  .dashboard {
+    max-width: 100%;
+  }
+  .dashboard-sidebar {
+    width: 90px;
+    padding: 14px 8px;
+  }
+
+  /* Trusted brands strip */
+  .trusted .container {
+    padding-block: 60px;
+  }
+  .trusted-header h2 {
+    font-size: 2.1rem;
+  }
+  .trusted-logos {
+    width: 95%;
+    padding: 1.2rem;
+  }
+
+  /* Features: one column of cards */
+  .features .container {
+    padding: 3rem 1.25rem;
+  }
+  .features-header h2 {
+    font-size: 1.5rem;
+    word-spacing: 4px;
+  }
+  .features-header p {
+    font-size: 1.05rem;
+    margin-bottom: 60px;
+  }
+  .feature-cards {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .how-it-works h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .overlay-text {
+    font-size: clamp(2.3rem, 10vw, 6rem);
+  }
+
+  /* Stats: 2 columns is still fine at this width */
+  .statistics .container {
+    padding: 4rem 1.5rem;
+  }
+  .section-heading h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .stat-container {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  /* Pricing: single column, cards full width */
+  .pricing .container {
+    padding: 4rem 1.5rem;
+  }
+  .pricing-heading h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .pricing-cards {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .pricing-cards .pricing-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Testimonials: single column */
+  .testimonials .container {
+    padding: 4rem 1.5rem;
+  }
+  .testimonials-cards {
+    grid-template-columns: 1fr;
+  }
+  .testimonials .trusted-brands ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  /* FAQ: sidebar goes above the questions instead of beside them */
+  .faq .container {
+    padding: 4rem 1.5rem;
+  }
+  .faq-content {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .faq-sidebar {
+    flex-direction: row;
+  }
+  .faq-sidebar .question-icon,
+  .faq-sidebar .support-team {
+    flex: 1;
+    min-height: 160px;
+  }
+  .faq-contact {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  .faq-contact-text {
+    width: 100%;
+  }
+
+  /* Footer: stack everything */
+  .top-cta-strip {
+    width: 100%;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .top-cta-strip .cta-content {
+    flex-direction: column;
+  }
+  .main-footer {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+
+  .bottom-footer {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+  .legal-links ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* ---------- 480px: phones ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 1rem;
+  }
+  nav > a img {
+    height: 42px;
+    max-width: 130px;
+    width: auto;
+  }
+  .actions {
+    gap: 0.6rem;
+  }
+  .actions a:nth-child(1) {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+  .actions a:nth-child(2) {
+    font-size: 0.78rem;
+    padding: 6px 10px;
+  }
+  .ham-burger {
+    font-size: 1.3rem;
+  }
+
+  /* Hero */
+  .hero {
+    padding-block: 3.5rem;
+  }
+  .hero-content h4 {
+    font-size: 0.8rem;
+    padding: 8px 14px;
+  }
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .primary-btn,
+  .secondry-btn {
+    text-align: center;
+  }
+
+  /* Dashboard: stack sidebar above main content */
+  .dashboard {
+    min-height: auto;
+  }
+  .dashboard-body {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+  }
+  .dashboard-sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .dashboard-sidebar ul li {
+    margin-bottom: 0;
+  }
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Trusted logos row */
+  .logo-list img,
+  .logo-list svg {
+    width: 70px;
+    height: 70px;
+  }
+  .trusted-header h2 {
+    font-size: 1.7rem;
+  }
+  .trusted-header p {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  /* Feature cards */
+  .feature-card {
+    padding: 25px 22px;
+  }
+
+  /* Stats */
+  .stat-container {
+    grid-template-columns: 1fr;
+  }
+  .stat-card h3 {
+    font-size: 2rem;
+  }
+  .section-heading h2 {
+    font-size: 1.7rem;
+  }
+
+  /* Pricing */
+  .pricing-heading h2 {
+    font-size: 1.7rem;
+  }
+  .pricing-price span {
+    font-size: 2.2rem;
+  }
+  .date-filter {
+    flex-wrap: wrap;
+  }
+
+  /* Testimonials */
+  .testimonials-header h2 {
+    font-size: 1.7rem;
+  }
+
+  /* FAQ */
+  .faq-sidebar {
+    flex-direction: column;
+  }
+  .faq-heading h2 {
+    font-size: 1.7rem;
+  }
+
+  /* Footer */
+  .cta-content .rocket-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+  .brand-info {
+    max-width: 100%;
+  }
+  .brand-info img {
+    height: 70px;
+  }
 }

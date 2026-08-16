@@ -19,6 +19,7 @@
   <body>
     <header>
       <nav class="container">
+        <input type="checkbox" id="menu-toggle" />
         <a href="#"
           ><img src="assets/images/f_s logo.png" alt="Flowsync-logo"
         /></a>
@@ -31,9 +32,14 @@
             <li><a href="#">FAQ</a></li>
           </ul>
         </div>
+        <label for="menu-toggle" class="overlay"></label>
         <div class="actions">
           <a href="#">Login</a>
           <a href="#">Get Started <i class="ri-arrow-right-line"></i></a>
+          <!-- For Hamburger -->
+          <label for="menu-toggle" class="ham-burger"
+            ><i class="ri-menu-2-fill"></i
+          ></label>
         </div>
       </nav>
     </header>
