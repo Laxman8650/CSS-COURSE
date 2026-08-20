@@ -2474,13 +2474,89 @@ summary::-webkit-details-marker {
     font-size: 0.7rem;
     text-align: center;
   }
+  .faq-contact {
+    padding: 2rem 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1.3rem;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 10px;
+  }
+  .faq-contact-icon i {
+    font-size: 2.4rem;
+    color: rgb(174, 173, 173);
+  }
+  .faq-contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .faq-contact-text {
+    gap: 0.8rem;
+    width: 60%;
+  }
+  .faq-contact-text h3 {
+    font-size: 1rem;
+  }
+  .faq-contact-text p {
+    font-size: 0.8rem;
+  }
   .faq-contact-btn {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: white;
     font-weight: 500;
-    padding: 10px;
+    padding: 7px;
     border-radius: 5px;
     background-color: rgb(5, 5, 173);
+  }
+  .top-cta-strip {
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(184, 210, 249, 0.567);
+    padding: 1.6rem;
+    gap: 3.7rem;
+  }
+  .cta-content .rocket-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  .cta-content .cta-text h3 {
+    width: 70%;
+    font-size: 1rem;
+  }
+  .cta-content .cta-text p {
+    font-size: 0.7rem;
+  }
+  .top-cta-strip .free-started {
+    font-size: 0.5rem;
+    padding: 10px;
+  }
+  .brand-info .description p {
+    width: 80%;
+    max-width: 220px;
+    padding: 0;
+    font-size: 0.75rem;
+  }
+  .product-info ul li a,
+  .company-info ul li a,
+  .support-info ul li a {
+    font-size: 0.8rem;
+    color: rgb(196, 194, 194);
+  }
+  .bottom-footer {
+    width: min(90%, 1100px);
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 3.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .copyright-credit p {
+    font-size: 0.85rem;
+  }
+  .legal-links ul li a {
+    font-size: 0.75rem;
   }
   /* The connector line between step icons is a fixed 290px, so with real
      content (3 icons) it overflows well before tablet width. It's purely
