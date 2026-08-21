@@ -2279,11 +2279,35 @@ summary::-webkit-details-marker {
 
 /* ---------- 1024px: tablets / small laptops ---------- */
 @media (max-width: 1024px) {
+  .hero {
+    padding-block: 9rem;
+  }
+  nav > a img {
+    max-height: 70px;
+  }
+  nav.container {
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding-inline: 1rem;
+  }
+  .menu ul li a {
+    font-size: 0.9rem;
+  }
+  .actions {
+    color: black;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .actions a:nth-child(2) {
+    width: max-content;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
   .hero-content h1 {
     font-size: 2rem;
     text-align: center;
   }
-
   .hero-content p {
     font-size: 0.9rem;
     text-align: center;
@@ -2319,9 +2343,7 @@ summary::-webkit-details-marker {
     border: 1px solid rgba(79, 70, 229, 0.15);
     border-radius: 20px;
   }
-  .hero {
-    padding-block: 6rem;
-  }
+
   .dashboard-header h4 {
     font-size: 0.9rem;
   }
@@ -2411,116 +2433,121 @@ summary::-webkit-details-marker {
   .steps-images {
     display: none;
   }
-}
-.stat-container {
-  width: 90%;
-  grid-template-columns: repeat(2, 1fr);
-}
-.pricing-cards {
-  width: 90%;
-  grid-template-columns: repeat(2, 1fr);
-}
-.pricing-cards .pricing-card:last-child {
-  grid-column: 1 / -1;
-  max-width: 480px;
-  margin: 0 auto;
-}
-.testimonials-cards {
-  grid-template-columns: 1fr;
-}
-.support-team h3 {
-  margin: 0;
-  color: rgb(91, 89, 89);
-  font-size: 0.9rem;
-  width: 180px;
-}
-.support-team .response-time {
-  font-size: 0.7rem;
-  text-align: center;
-}
-.faq-contact {
-  padding: 2rem 0;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  gap: 1.3rem;
-  border: 1px solid rgb(163, 163, 163);
-  border-radius: 10px;
-}
-.faq-contact-icon i {
-  font-size: 2.4rem;
-  color: rgb(174, 173, 173);
-}
-.faq-contact-icon {
-  width: 60px;
-  height: 60px;
-}
-.faq-contact-text {
-  gap: 0.8rem;
-  width: 60%;
-}
-.faq-contact-text h3 {
-  font-size: 1rem;
-}
-.faq-contact-text p {
-  font-size: 0.8rem;
-}
-.faq-contact-btn {
-  font-size: 0.8rem;
-  color: white;
-  font-weight: 500;
-  padding: 7px;
-  border-radius: 5px;
-  background-color: rgb(5, 5, 173);
-}
-.top-cta-strip {
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(184, 210, 249, 0.567);
-  padding: 1.6rem;
-  gap: 3.7rem;
-}
-.cta-content .rocket-icon {
-  width: 60px;
-  height: 60px;
-  font-size: 2rem;
-}
-.cta-content .cta-text h3 {
-  width: 70%;
-  font-size: 1rem;
-}
-.cta-content .cta-text p {
-  font-size: 0.7rem;
-}
-.top-cta-strip .free-started {
-  font-size: 0.5rem;
-  padding: 10px;
-}
-.brand-info .description p {
-  width: 80%;
-  max-width: 220px;
-  padding: 0;
-  font-size: 0.75rem;
-}
-.product-info ul li a,
-.company-info ul li a,
-.support-info ul li a {
-  font-size: 0.8rem;
-  color: rgb(196, 194, 194);
-}
-.bottom-footer {
-  width: min(90%, 1100px);
-  margin-top: 2.5rem;
-  display: flex;
-  gap: 3.5rem;
-  justify-content: center;
-  align-items: center;
-}
-.copyright-credit p {
-  font-size: 0.85rem;
-}
-.legal-links ul li a {
-  font-size: 0.75rem;
+
+  .stat-container {
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing-cards {
+    width: 90%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .pricing-card:last-child {
+    grid-column: 1 / -1;
+    width: calc((100% - 20px) / 2);
+    justify-self: center;
+  }
+  .testimonials-cards {
+    grid-template-columns: 1fr;
+  }
+  .support-team h3 {
+    margin: 0;
+    color: rgb(91, 89, 89);
+    font-size: 0.9rem;
+    width: 180px;
+  }
+  .support-team .response-time {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+  .faq-contact {
+    padding: 2rem 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1.3rem;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 10px;
+  }
+  .faq-contact-icon i {
+    font-size: 2.4rem;
+    color: rgb(174, 173, 173);
+  }
+  .faq-contact-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .faq-contact-text {
+    gap: 0.8rem;
+    width: 60%;
+  }
+  .faq-contact-text h3 {
+    font-size: 1rem;
+  }
+  .faq-contact-text p {
+    font-size: 0.8rem;
+  }
+  .faq-contact-btn {
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+    padding: 7px;
+    border-radius: 5px;
+    background-color: rgb(5, 5, 173);
+  }
+  .top-cta-strip {
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(184, 210, 249, 0.567);
+    padding: 1.6rem 1.4rem;
+    gap: 2rem;
+  }
+  .cta-content .rocket-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  .cta-content .cta-text h3 {
+    width: 70%;
+    font-size: 1rem;
+  }
+  .cta-content .cta-text p {
+    font-size: 0.7rem;
+  }
+  .top-cta-strip .free-started {
+    font-size: 0.7rem;
+    padding: 10px;
+  }
+  .brand-info .description p {
+    width: 80%;
+    max-width: 220px;
+    padding: 0;
+    font-size: 0.75rem;
+  }
+  .product-info ul li a,
+  .company-info ul li a,
+  .support-info ul li a {
+    font-size: 0.8rem;
+    color: rgb(196, 194, 194);
+  }
+  .bottom-footer {
+    width: 90%;
+    max-width: 1100px;
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 3.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .copyright-credit {
+    font-size: 0.75rem;
+    padding: 15px;
+  }
 }
 
 /* ---------- 768px: tablets (portrait) / large phones ---------- */
@@ -2649,7 +2676,7 @@ summary::-webkit-details-marker {
     text-align: center;
   }
   .pricing-cards {
-    width: 100%;
+    width: 90%;
     grid-template-columns: 1fr;
   }
   .pricing-cards .pricing-card:last-child {
@@ -2919,6 +2946,7 @@ summary::-webkit-details-marker {
   }
 
   /* Pricing */
+  /* Problem in this */
   .pricing-heading h2 {
     width: 100%;
     font-size: 1.6rem;
