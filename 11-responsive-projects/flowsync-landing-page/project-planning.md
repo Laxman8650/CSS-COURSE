@@ -13,13 +13,13 @@
 - HTML5
 - CSS3
 
-**Project Status:** 🟡 In Progress
+**Project Status:** 🟡 Completed.
 
 **Version:** v1.0
 
 **Start Date:** 27 July 2026
 
-**Expected Completion:** --
+**Expected Completion:** 22 August 2026
 
 ---
 
@@ -58,7 +58,7 @@ Reference Websites
 | Purpose            | Color   |
 | ------------------ | ------- |
 | Primary            | #4F46E5 |
-| Secondary          | #22C55E |
+| Secondary          | #22c5b2 |
 | Background         | #FFFFFF |
 | Section Background | #F8FAFC |
 | Text               | #111827 |
@@ -86,49 +86,53 @@ sans-serif
 
 ## Font Scale
 
-| Element | Size |
-| ------- | ---- |
-| H1      | 56px |
-| H2      | 40px |
-| H3      | 28px |
-| H4      | 22px |
-| Body    | 18px |
-| Small   | 14px |
+| Element | Size    |
+| ------- | ------- |
+| H1      | 3rem    |
+| H2      | 2.2rem  |
+| H3      | 1.4rem  |
+| H4      | 1rem    |
+| Body    | 0.85rem |
+| Small   | 14px    |
 
 ---
 
 ## Font Weight
 
-| Element     | Weight |
-| ----------- | ------ |
-| Heading     | 700    |
-| Sub Heading | 600    |
-| Body        | 400    |
-| Button      | 500    |
+| Element     | Weight  |
+| ----------- | ------- |
+| Heading     | 700/800 |
+| Sub Heading | 600     |
+| Body        | 400     |
+| Button      | 600/700 |
 
 ---
 
 # 📏 Spacing System
 
 ```
-8px
-16px
-24px
-32px
-48px
-64px
-80px
-96px
+4px    → very small gaps
+8px    → small gaps
+12px   → small/medium
+16px   → standard
+20px   → medium
+24px   → medium/large
+32px   → section/component spacing
+40px   → large
+48px   → large
+64px   → section spacing
 ```
 
 ---
 
 # 📦 Border Radius
 
-Buttons : 10px
-Cards : 16px
-Inputs : 8px
-Badges : 999px
+Small elements → 6px – 8px
+Buttons → 8px – 10px
+Cards → 12px – 16px
+Large containers → 16px – 20px
+Pills → 999px
+Circular elements → 50%
 
 ---
 
@@ -167,13 +171,13 @@ Drawer
 Desktop
 
 ```
-1200px+
+1024px+
 ```
 
 Laptop
 
 ```
-992px
+900px
 ```
 
 Tablet
@@ -185,13 +189,13 @@ Tablet
 Mobile
 
 ```
-576px
+468px
 ```
 
-Small Mobile
+Navbar
 
 ```
-375px
+900px
 ```
 
 ---
@@ -318,7 +322,7 @@ flowsync-landing-page/
 - Overlay
 - Box Shadow
 - Hover Effects
-- Semantic HTML
+- Semantic & Non-Semantic HTML
 
 ---
 
@@ -333,12 +337,12 @@ flowsync-landing-page/
 
 # 🚀 Final Checklist
 
-- [ ] Fully Responsive
-- [ ] Clean HTML
-- [ ] Clean CSS
-- [ ] Well Commented
-- [ ] Images Optimized
-- [ ] Accessibility Checked
-- [ ] README Completed
-- [ ] Git Commits Organized
-- [ ] GitHub Push
+- [✓] Fully Responsive
+- [✓] Clean HTML
+- [✓] Clean CSS
+- [✓] Well Commented
+- [✓] Images Optimized
+- [✓] Accessibility Checked
+- [✓] README Completed
+- [✓] Git Commits Organized
+- [✓] GitHub Push
