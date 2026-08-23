@@ -57,6 +57,9 @@ The layout adapts by changing columns, stacking sections, resizing typography, a
 ### Mobile
 
 ![FlowSync Mobile Preview](assets/images/flowsync-mobile.png)
+
+![FlowSync Mobile Preview](assets/images/flowsync-mobile1.png)
+
 ![FlowSync Mobile Preview](assets/images/flowsync-mobile1.png)
 
 ## 📂 Project Structure
