@@ -1,5 +1,11 @@
 # FlowSync
 
+## 📸 Responsive Preview
+
+### Desktop
+
+![FlowSync Desktop Preview](assets/images/flowsync-desktop.png)
+
 A modern and responsive SaaS landing page built with pure HTML and CSS.
 
 FlowSync is a frontend UI project focused on creating a clean, modern, and fully responsive web experience across desktop, tablet, and mobile devices.
@@ -37,14 +43,21 @@ FlowSync is a frontend UI project focused on creating a clean, modern, and fully
 
 The layout is designed around multiple screen sizes:
 
-| Breakpoint | Purpose |
-|---|---|
-| `1024px` | Tablets / small laptops |
-| `900px` | Mobile navigation |
-| `768px` | Tablets / large phones |
-| `480px` | Mobile phones |
+| Breakpoint | Purpose                 |
+| ---------- | ----------------------- |
+| `1024px`   | Tablets / small laptops |
+| `900px`    | Mobile navigation       |
+| `768px`    | Tablets / large phones  |
+| `480px`    | Mobile phones           |
 
 The layout adapts by changing columns, stacking sections, resizing typography, and adjusting navigation and dashboard components.
+
+## 📸 Responsive Preview
+
+### Mobile
+
+![FlowSync Mobile Preview](assets/images/flowsync-mobile.png)
+![FlowSync Mobile Preview](assets/images/flowsync-mobile1.png)
 
 ## 📂 Project Structure
 
@@ -58,3 +71,5 @@ flowsync-landing-page/
 ├── project.planing.md
 │
 └── README.md
+
+```
