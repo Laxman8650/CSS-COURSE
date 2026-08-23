@@ -1,3 +1,5 @@
+/* * FlowSync — Main Stylesheet */
+
 * {
   margin: 0;
   padding: 0;
@@ -20,12 +22,15 @@ body {
   width: 100%;
   /* padding-top: 90px; */
 }
+/* ========== GLOBAL LAYOUT & CONTAINERS ========== */
 .container {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
   padding-inline: 1rem;
 }
+
+/* ========== NAVBAR ========== */
 
 nav {
   height: 70px;
@@ -121,6 +126,12 @@ nav > a img {
 .actions a:nth-child(1) {
   padding: 6px 10px;
 }
+/*
+ * ========== HOVER INTERACTIONS ==========
+ * Hover effects are applied only on devices that support
+ * real hover input (mouse/trackpad). Touch-only devices
+ * will keep the normal mobile interaction without hover transforms.
+ */
 @media (hover: hover) {
   .actions a:nth-child(1) {
     transition: 0.3s ease;
@@ -228,6 +239,7 @@ nav > a img {
     z-index: 1200; /* stays above the drawer/backdrop so it's always clickable to close */
   }
 }
+/* ========== HERO SECTION ========== */
 
 .hero {
   /* padding-top: 130px; */
@@ -377,6 +389,7 @@ nav > a img {
   background: linear-gradient(to bottom, #1f1c18, #8e0e00);
 }
 /* Dash board */
+/* ========== DASHBOARD PREVIEW ========== */
 .dashboard {
   width: 100%;
   max-width: 620px;
@@ -695,6 +708,7 @@ nav > a img {
   align-items: center;
   padding-block: 100px;
 }
+/* ========== TRUSTED BRANDS ========== */
 .trusted {
   background: radial-gradient(
     circle at top,
@@ -964,6 +978,7 @@ nav > a img {
 
   /* min-height: 220vh; */
 }
+/* ========== HOW IT WORKS ========== */
 .how-it-works {
   position: relative;
   background: #e4e7ec;
@@ -1212,6 +1227,7 @@ nav > a img {
   align-items: center;
   padding: 7rem 2rem;
 }
+/* ========== STATISTICS ========== */
 .statistics {
   background: linear-gradient(180deg, #fefeff, #f3f3fb);
 }
@@ -1730,6 +1746,7 @@ nav > a img {
   align-items: center;
   padding: 6rem 2rem;
 }
+/* ========== TESTIMONIALS ========== */
 .testimonials {
   background-color: #f2f8fa;
 }
@@ -1913,6 +1930,7 @@ nav > a img {
   align-items: center;
   padding: 6rem 2rem;
 }
+/* ========== FAQ ========== */
 .faq {
   background: radial-gradient(
     circle at 10% 10%,
@@ -2287,7 +2305,7 @@ summary::-webkit-details-marker {
      480px  -> phones -> single column, smaller type
    ========================================================= */
 
-/* ---------- 1024px: tablets / small laptops ---------- */
+/* ========== RESPONSIVE: 1024px — TABLETS / SMALL LAPTOPS ========== */
 @media (max-width: 1024px) {
   .hero {
     padding-block: 9rem;
@@ -2561,7 +2579,7 @@ summary::-webkit-details-marker {
   }
 }
 
-/* ---------- 768px: tablets (portrait) / large phones ---------- */
+/* ========== RESPONSIVE: 768px — TABLETS / LARGE PHONES ========== */
 @media (max-width: 768px) {
   /* Hero: image below content instead of side-by-side */
   .hero-content {
@@ -2787,7 +2805,7 @@ summary::-webkit-details-marker {
   }
 }
 
-/* ---------- 480px: phones ---------- */
+/* ========== RESPONSIVE: 480px — PHONES ========== */
 @media (max-width: 480px) {
   .container {
     padding-inline: 1rem;
@@ -2877,13 +2895,12 @@ summary::-webkit-details-marker {
     height: 70px;
   }
   .trusted-header h2 {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
     font-family: inter;
   }
 
   .trusted-header p {
-    width: 100%;
-    max-width: 340px;
+    max-width: 60%;
     font-size: 0.7rem;
     padding: 4px 10px;
     box-shadow: none;
