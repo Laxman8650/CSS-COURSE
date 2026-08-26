@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login UI</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Elsie:wght@400;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Distressed&family=Sedgwick+Ave+Display&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="ui-container-left">
+        <div class="flowsync-logo">
+          <img src="assets/images/flowsync.png" alt="flowsync-logo" />
+        </div>
+
+        <h1>Welcome <span>back!</span></h1>
+        <p>Log in to continue managing your workflow seamlessly.</p>
+
+        <div class="visual">
+          <img src="assets/images/dashboard.png" alt="dashboard img" />
+        </div>
+      </div>
+
+      <div class="ui-container-right">
+        <h2>Login to your account</h2>
+        <p>Enter your credentials to access your account</p>
+        <form action="#">
+          <div class="input-field">
+            <div class="input-box">
+              <i class="ri-mail-send-line"></i>
+              <input type="email" placeholder="Email address" />
+            </div>
+
+            <div class="input-box">
+              <i class="ri-door-lock-line"></i>
+              <!-- 🔒 left side -->
+              <input type="password" placeholder="Password" />
+              <i class="ri-eye-off-line"></i>
+              <!-- 👁 right side -->
+            </div>
+
+            <div class="form-options">
+              <label>
+                <input type="checkbox" />
+                Remember me
+              </label>
+              <a href="#">Forgot password</a>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+          </div>
+
+          <div class="divider">
+            <span>or continue with</span>
+          </div>
+
+          <div class="optional-btn">
+            <a href="#"
+              ><img src="assets/images/google.svg" alt="google" />Google</a
+            >
+            <a href="#"
+              ><img src="assets/images/github.svg" alt="github" /> GitHub</a
+            >
+          </div>
+          <div class="signup">
+            <span>Don't have an account?</span>
+            <a href="#">Sign up?</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
