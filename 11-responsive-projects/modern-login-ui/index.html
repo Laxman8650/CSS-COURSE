@@ -11,12 +11,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Elsie:wght@400;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Distressed&family=Sedgwick+Ave+Display&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Elsie:wght@400;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Risque&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik+Distressed&family=Sedgwick+Ave+Display&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/style.css" />
   </head>
   <body>
+    <!-- <script>
+      window.addEventListener("load", function () {
+        var doc = document.documentElement;
+        var extra = doc.scrollWidth - window.innerWidth;
+        var msg =
+          "Page width: " +
+          doc.scrollWidth +
+          "px | Screen width: " +
+          window.innerWidth +
+          "px | Extra overflow: " +
+          extra +
+          "px";
+        var box = document.createElement("div");
+        box.textContent = msg;
+        box.style.cssText =
+          "position:fixed;bottom:0;left:0;right:0;background:red;color:white;padding:10px;z-index:99999;font-size:14px;text-align:center;";
+        document.body.appendChild(box);
+      });
+    </script> -->
     <section class="container">
       <div class="ui-container-left">
         <div class="flowsync-logo">
@@ -32,20 +51,29 @@
       </div>
 
       <div class="ui-container-right">
-        <h2>Login to your account</h2>
+        <h2>Login to your <span>account</span></h2>
         <p>Enter your credentials to access your account</p>
         <form action="#">
           <div class="input-field">
             <div class="input-box">
-              <i class="ri-mail-send-line"></i>
-              <input type="email" placeholder="Email address" />
+              <i id="mail" class="ri-mail-send-line"></i>
+              <input
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="Email address"
+              />
             </div>
 
             <div class="input-box">
-              <i class="ri-door-lock-line"></i>
-              <!-- 🔒 left side -->
-              <input type="password" placeholder="Password" />
-              <i class="ri-eye-off-line"></i>
+              <i id="lock" class="ri-lock-password-line"></i>
+              <input
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Password"
+              />
+              <i id="eye-icon" class="ri-eye-off-line"></i>
               <!-- 👁 right side -->
             </div>
 
@@ -54,9 +82,9 @@
                 <input type="checkbox" />
                 Remember me
               </label>
-              <a href="#">Forgot password</a>
+              <a class="fg-pass" href="#">Forgot password?</a>
             </div>
-            <button type="submit" class="login-btn">Login</button>
+            <div class="login-btn"><button type="submit">Login</button></div>
           </div>
 
           <div class="divider">
@@ -64,10 +92,10 @@
           </div>
 
           <div class="optional-btn">
-            <a href="#"
+            <a href="#" class="google"
               ><img src="assets/images/google.svg" alt="google" />Google</a
             >
-            <a href="#"
+            <a href="#" class="github"
               ><img src="assets/images/github.svg" alt="github" /> GitHub</a
             >
           </div>

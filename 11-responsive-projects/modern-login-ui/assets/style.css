@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Manrope", sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+.container {
+  width: min(90%, 1200px);
+  min-height: 600px;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.ui-container-left {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 4rem;
+  background: radial-gradient(circle at 50% 50%, #202a63 0%, #010926 100%);
+}
+.ui-container-left h1 {
+  color: #ffff;
+  text-align: center;
+  font-size: 2.4rem;
+  margin-top: 1.4rem;
+}
+.ui-container-left h1 span {
+  color: #57a9f6f3;
+}
+.ui-container-left p {
+  max-width: 100%;
+  width: 100%;
+  color: #c6c4c4;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+.flowsync-logo img {
+  height: 36px;
+  object-fit: contain;
+}
+.visual img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: contrast(110%) opacity(1) brightness(90%)
+    drop-shadow(-15px 15px 10px #0a0a0a);
+  margin-block: 2rem;
+  transform: translateY(30px);
+}
+.ui-container-right {
+  width: 100%;
+  max-width: 100%;
+  padding: 4rem;
+  background-color: #f8fdff;
+}
+.ui-container-right h2 {
+  font-size: 2rem;
+  color: #010926;
+}
+.ui-container-right h2 span {
+  color: rgb(0, 47, 255);
+  font-family: "Risque", serif;
+  text-transform: capitalize;
+}
+.ui-container-right p {
+  width: 70%;
+  max-width: 100%;
+  font-size: 0.9rem;
+  color: #7a7878;
+  font-weight: 500;
+  margin: 1rem 0 2rem 0;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.input-box {
+  position: relative;
+}
+.input-box input {
+  width: 100%;
+  padding: 0.8rem 2.3rem;
+  margin: 0;
+  border: 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow 0.2s linear;
+}
+.input-box input:focus {
+  box-shadow: 0px 2px 8px rgba(50, 52, 53, 0.5);
+  /* border: 1px solid #3498db; */
+}
+#mail {
+  position: absolute;
+  top: 49%;
+  left: 3%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #7a7878;
+}
+#lock {
+  position: absolute;
+  top: 48%;
+  left: 3%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #7a7878;
+}
+#eye-icon {
+  position: absolute;
+  top: 48%;
+  right: 3%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #7a7878;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.91rem;
+}
+.form-options label input[type="checkbox"] {
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.form-options label input[type="checkbox"]:checked {
+  transform: scale(1);
+}
+.form-options label {
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.form-options .fg-pass {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  transition: transform 0.3s linear;
+}
+.form-options:hover a {
+  transform: scaleX(1.05);
+  color: #010926;
+}
+
+.login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-btn button {
+  width: fit-content;
+  padding: 0.6rem 4rem;
+  background-color: #20a0f5;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 540;
+  color: #ffff;
+  transition: all 0.2s linear;
+}
+.login-btn button:hover {
+  box-shadow: 4px 3px 15px rgb(156, 155, 155);
+  transform: scale(1.03);
+}
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 0.9rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #dedcdc;
+}
+
+.divider span {
+  font-size: 0.85rem;
+  color: #898888;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.optional-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.optional-btn img {
+  height: 22px;
+  object-fit: contain;
+}
+.google {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: black;
+  text-decoration: none;
+  border: 1px solid rgb(209, 206, 206);
+  padding: 0.4rem 1rem;
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  border-radius: 5px;
+}
+.github {
+  font-size: 0.8rem;
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid rgb(198, 195, 195);
+  padding: 0.4rem 1rem;
+  display: inline-flex;
+  gap: 0.6rem;
+  align-items: center;
+  border-radius: 5px;
+}
+.signup {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 2rem;
+}
