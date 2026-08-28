@@ -29,6 +29,10 @@ body {
   padding: 3rem 4rem;
   background: radial-gradient(circle at 50% 50%, #202a63 0%, #010926 100%);
 }
+.flowsync-logo img {
+  height: 36px;
+  object-fit: contain;
+}
 .ui-container-left h1 {
   color: #ffff;
   text-align: center;
@@ -47,10 +51,7 @@ body {
   margin-top: 1.2rem;
   text-align: center;
 }
-.flowsync-logo img {
-  height: 36px;
-  object-fit: contain;
-}
+
 .visual img {
   width: 100%;
   max-width: 500px;
@@ -135,7 +136,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.91rem;
+  /* font-size: 0.91rem; */
 }
 .form-options label input[type="checkbox"] {
   transform: scale(0.9);
@@ -148,7 +149,7 @@ body {
   transform: scale(1);
 }
 .form-options label {
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -244,4 +245,54 @@ body {
   font-size: 0.85rem;
   text-align: center;
   margin-top: 2rem;
+}
+
+/* ==================== RESPONSIVE LAYOUT ==================== */
+
+@media (768px <= width <= 1024px) {
+  .ui-container-left {
+    padding: 3.5rem 2rem;
+  }
+  .flowsync-logo img {
+    height: 25px;
+    object-fit: contain;
+  }
+  .ui-container-left h1 {
+    font-size: 2rem;
+    margin-top: 2.5rem;
+  }
+  .ui-container-left p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 1.3rem;
+    text-align: center;
+  }
+  .visual img {
+    transform: translateY(60px);
+  }
+  .ui-container-right {
+    width: 100%;
+    max-width: 100%;
+    padding: 4rem 3rem;
+  }
+  .ui-container-right p {
+    width: 80%;
+    max-width: 100%;
+    font-size: 0.8rem;
+  }
+  .form-options label {
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  .form-options .fg-pass {
+    font-size: 0.7rem;
+  }
+  .signup {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
 }
