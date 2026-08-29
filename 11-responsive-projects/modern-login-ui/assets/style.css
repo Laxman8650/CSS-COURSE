@@ -1,8 +1,13 @@
+/* ==================== GLOBAL RESET ==================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* ==================== BODY ==================== */
+
 body {
   font-family: "Manrope", sans-serif;
   background-color: white;
@@ -11,9 +16,12 @@ body {
   /* justify-content: center; */
   align-items: center;
 }
+
+/* ==================== MAIN CONTAINER ==================== */
+
 .container {
   width: min(90%, 1200px);
-  min-height: 600px;
+  min-height: 560px;
   height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -23,25 +31,34 @@ body {
   overflow: hidden;
 }
 
+/* ==================== LEFT CONTAINER ==================== */
+
 .ui-container-left {
   display: flex;
   flex-direction: column;
   padding: 3rem 4rem;
   background: radial-gradient(circle at 50% 50%, #202a63 0%, #010926 100%);
 }
+
+/* FlowSync Logo */
 .flowsync-logo img {
   height: 36px;
   object-fit: contain;
 }
+
+/* Left Section Heading */
 .ui-container-left h1 {
   color: #ffff;
   text-align: center;
   font-size: 2.4rem;
   margin-top: 1.4rem;
 }
+
 .ui-container-left h1 span {
   color: #57a9f6f3;
 }
+
+/* Left Section Description */
 .ui-container-left p {
   max-width: 100%;
   width: 100%;
@@ -52,6 +69,7 @@ body {
   text-align: center;
 }
 
+/* Dashboard Visual */
 .visual img {
   width: 100%;
   max-width: 500px;
@@ -61,21 +79,29 @@ body {
   margin-block: 2rem;
   transform: translateY(30px);
 }
+
+/* ==================== RIGHT CONTAINER ==================== */
+
 .ui-container-right {
   width: 100%;
   max-width: 100%;
   padding: 4rem;
   background-color: #f8fdff;
 }
+
+/* Login Heading */
 .ui-container-right h2 {
   font-size: 2rem;
   color: #010926;
 }
+
 .ui-container-right h2 span {
   color: rgb(0, 47, 255);
   font-family: "Risque", serif;
   text-transform: capitalize;
 }
+
+/* Login Description */
 .ui-container-right p {
   width: 70%;
   max-width: 100%;
@@ -84,15 +110,21 @@ body {
   font-weight: 500;
   margin: 1rem 0 2rem 0;
 }
+
+/* ==================== INPUT FIELDS ==================== */
+
 .input-field {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-top: 1rem;
 }
+
 .input-box {
   position: relative;
 }
+
+/* Input Box */
 .input-box input {
   width: 100%;
   padding: 0.8rem 2.3rem;
@@ -103,10 +135,14 @@ body {
   outline: none;
   transition: box-shadow 0.2s linear;
 }
+
+/* Input Focus Effect */
 .input-box input:focus {
   box-shadow: 0px 2px 8px rgba(50, 52, 53, 0.5);
   /* border: 1px solid #3498db; */
 }
+
+/* Email Icon */
 #mail {
   position: absolute;
   top: 49%;
@@ -115,6 +151,8 @@ body {
   font-size: 0.85rem;
   color: #7a7878;
 }
+
+/* Password Lock Icon */
 #lock {
   position: absolute;
   top: 48%;
@@ -123,6 +161,8 @@ body {
   font-size: 0.85rem;
   color: #7a7878;
 }
+
+/* Password Visibility Icon */
 #eye-icon {
   position: absolute;
   top: 48%;
@@ -132,12 +172,15 @@ body {
   color: #7a7878;
 }
 
+/* ==================== FORM OPTIONS ==================== */
+
 .form-options {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* font-size: 0.91rem; */
 }
+
+/* Remember Me Checkbox */
 .form-options label input[type="checkbox"] {
   transform: scale(0.9);
   transition: transform 0.2s ease;
@@ -145,9 +188,12 @@ body {
   margin-right: 6px;
   vertical-align: middle;
 }
+
 .form-options label input[type="checkbox"]:checked {
   transform: scale(1);
 }
+
+/* Remember Me Label */
 .form-options label {
   font-size: 1rem;
   cursor: pointer;
@@ -155,21 +201,30 @@ body {
   align-items: center;
   user-select: none;
 }
+
+/* Forgot Password */
 .form-options .fg-pass {
   margin-right: 0.5rem;
   font-size: 0.8rem;
   transition: transform 0.3s linear;
 }
-.form-options:hover a {
-  transform: scaleX(1.05);
-  color: #010926;
+
+/* Hover Effect - Devices Supporting Hover */
+@media (hover: hover) {
+  .form-options:hover a {
+    transform: scaleX(1.05);
+    color: #010926;
+  }
 }
+
+/* ==================== LOGIN BUTTON ==================== */
 
 .login-btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .login-btn button {
   width: fit-content;
   padding: 0.6rem 4rem;
@@ -179,12 +234,19 @@ body {
   font-size: 0.9rem;
   font-weight: 540;
   color: #ffff;
-  transition: all 0.2s linear;
+  transition: 0.2s linear;
 }
-.login-btn button:hover {
-  box-shadow: 4px 3px 15px rgb(156, 155, 155);
-  transform: scale(1.03);
+
+/* Login Button Hover - Devices Supporting Hover */
+@media (hover: hover) {
+  .login-btn button:hover {
+    box-shadow: 4px 3px 15px rgb(156, 155, 155);
+    transform: scale(1.03);
+  }
 }
+
+/* ==================== DIVIDER ==================== */
+
 .divider {
   display: flex;
   align-items: center;
@@ -206,6 +268,9 @@ body {
   font-weight: 500;
   white-space: nowrap;
 }
+
+/* ==================== SOCIAL LOGIN BUTTONS ==================== */
+
 .optional-btn {
   display: flex;
   justify-content: center;
@@ -213,10 +278,13 @@ body {
   gap: 1rem;
   margin-top: 1rem;
 }
+
 .optional-btn img {
   height: 22px;
   object-fit: contain;
 }
+
+/* Google Button */
 .google {
   font-size: 0.8rem;
   font-weight: 500;
@@ -229,6 +297,8 @@ body {
   align-items: center;
   border-radius: 5px;
 }
+
+/* GitHub Button */
 .github {
   font-size: 0.8rem;
   color: black;
@@ -241,58 +311,201 @@ body {
   align-items: center;
   border-radius: 5px;
 }
+
+/* ==================== SIGN UP ==================== */
+
 .signup {
   font-size: 0.85rem;
   text-align: center;
   margin-top: 2rem;
 }
 
-/* ==================== RESPONSIVE LAYOUT ==================== */
+/* =========================================================
+   RESPONSIVE LAYOUT
+   ========================================================= */
+
+/* ==================== TABLET / SMALL DESKTOP ==================== */
 
 @media (768px <= width <= 1024px) {
+  /* Left Section */
   .ui-container-left {
     padding: 3.5rem 2rem;
   }
+
   .flowsync-logo img {
     height: 25px;
     object-fit: contain;
   }
+
   .ui-container-left h1 {
     font-size: 2rem;
     margin-top: 2.5rem;
   }
+
   .ui-container-left p {
     font-size: 0.9rem;
     font-weight: 500;
     margin-top: 1.3rem;
     text-align: center;
   }
+
   .visual img {
     transform: translateY(60px);
   }
+
+  /* Right Section */
   .ui-container-right {
     width: 100%;
     max-width: 100%;
     padding: 4rem 3rem;
   }
+
   .ui-container-right p {
     width: 80%;
     max-width: 100%;
     font-size: 0.8rem;
   }
+
+  /* Form Options */
   .form-options label {
     font-size: 0.8rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
   }
+
   .form-options .fg-pass {
     font-size: 0.7rem;
   }
+
+  /* Sign Up */
   .signup {
     font-size: 0.8rem;
     text-align: center;
     margin-top: 2rem;
+  }
+}
+
+/* ==================== MOBILE / SMALL TABLET ==================== */
+
+@media (480px <= width < 768px) {
+  /* Left Section */
+  .ui-container-left {
+    padding: 3rem 2rem;
+  }
+
+  .flowsync-logo img {
+    height: 26px;
+  }
+
+  .ui-container-left h1 {
+    font-size: 1.5rem;
+    margin-top: 1.9rem;
+  }
+
+  .ui-container-left p {
+    font-size: 0.75rem;
+    font-weight: 500;
+    width: 80%;
+  }
+
+  .visual img {
+    margin-block: 3rem;
+    transform: translateY(60px);
+  }
+
+  /* Right Section */
+  .ui-container-right {
+    padding: 2.5rem 2rem;
+  }
+
+  .ui-container-right h2 {
+    font-size: 1.7rem;
+    color: #010926;
+  }
+
+  .ui-container-right p {
+    font-size: 0.75rem;
+    color: #6e6d6d;
+  }
+
+  /* Form Options */
+  .form-options label {
+    font-size: 0.75rem;
+  }
+
+  .form-options .fg-pass {
+    margin: 0;
+    font-size: 0.7rem;
+  }
+}
+
+/* ==================== SMALL MOBILE ==================== */
+
+@media (width < 480px) {
+  /* Main Container */
+  .container {
+    grid-template-columns: 1fr;
+    width: min(92%, 500px);
+  }
+
+  /* Hide Desktop Left Section */
+  .ui-container-left {
+    display: none;
+  }
+
+  /* Mobile Login Section */
+  .ui-container-right {
+    padding: 2.7rem 2rem;
+    background-color: #0a0a0a;
+    place-content: center;
+  }
+
+  /* Mobile Login Heading */
+  .ui-container-right h2 {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #fafafb;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile Login Description */
+  .ui-container-right p {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.85rem;
+    text-align: center;
+    color: #dddcdc;
+  }
+
+  /* Mobile Form Options */
+  .form-options label {
+    font-size: 0.7rem;
+    color: #ffff;
+  }
+
+  .form-options .fg-pass {
+    margin: 0;
+    font-size: 0.7rem;
+  }
+
+  /* Mobile Social Icons */
+  .optional-btn img {
+    height: 20px;
+    object-fit: contain;
+  }
+
+  /* Mobile Social Buttons */
+  .google,
+  .github {
+    color: white;
+  }
+
+  .github img {
+    filter: invert(1);
+  }
+
+  /* Mobile Sign Up */
+  .signup {
+    font-size: 0.8rem;
+    color: white;
   }
 }
