@@ -25,25 +25,27 @@ It contains concept demonstrations, applied practice, CSS effects, animations, m
 ```text
 responsive-css-lab/
 │
-├── 01-basic-css/                  (16 files) – Selectors, units, and CSS fundamentals
-├── 02-background-properties/      (4 files)  – Backgrounds, gradients, blend modes
-├── 03-box-model/                  (2 files)  – Box model & display property
-├── 04-flex-model/                 (6 files)  – Flexbox layout system
-├── 05-grid/                       (6 files)  – CSS Grid parent & child properties
-├── 06-pseudo/                     (2 files)  – Pseudo-classes & pseudo-elements
-├── 07-practice/                   (19 files) – Applied CSS practice
-├── 08-small-projects/             (9 mini-projects) – Standalone CSS projects
-├── 09-effects/                    (2 files)  – Transform & transition
-├── 10-animation/                  (2 files)  – Keyframe animation & card flip
-├── 11-responsive-projects/        (4 projects) – Responsive CSS projects
+├── 01-basic-css/
+├── 02-background-properties/
+├── 03-box-model/
+├── 04-flex-model/
+├── 05-grid/
+├── 06-pseudo/
+├── 07-practice/
+├── 08-small-projects/
+├── 09-effects/
+├── 10-animation/
+│
+├── 11-responsive-projects/
 │   ├── background-image-slideshow/
 │   ├── image-carousel/
 │   ├── loader-animation/
-│   └── responsive-navbar/
+│   ├── responsive-navbar/
+│   └── login-ui/
 │
 ├── assets/
-│   ├── css/                       (Shared stylesheets)
-│   └── images/                    (Images & GIFs used across demos)
+│   ├── css/
+│   └── images/
 │
 └── README.md
 ```
@@ -372,20 +374,7 @@ Contains images and GIFs used throughout the CSS demonstrations and mini-project
 
 ## 💡 Key Takeaways
 
-### 1. Positioning & Flow
-
-Understanding how:
-
-```css
-position: relative;
-position: absolute;
-position: fixed;
-position: sticky;
-```
-
-work together to create different layouts and positioning contexts.
-
-### 2. CSS Units
+### 1. CSS Units
 
 Learning when to use different CSS units:
 
@@ -394,7 +383,7 @@ Learning when to use different CSS units:
 - `rem` – scalable typography and spacing
 - `vh` / `vw` – viewport-based sizing
 
-### 3. Layout Systems
+### 2. Layout Systems
 
 Progression from basic layouts to modern CSS layout systems:
 
@@ -406,7 +395,7 @@ Flexbox
 CSS Grid
 ```
 
-### 4. Responsive Design
+### 3. Responsive Design
 
 Using:
 
@@ -421,7 +410,7 @@ queries and flexible layouts to create interfaces that adapt across:
 - Laptop
 - Desktop
 
-### 5. CSS Animations
+### 4. CSS Animations
 
 Understanding:
 
@@ -432,7 +421,7 @@ Understanding:
 - `animation-delay`
 - Timing functions
 
-### 6. Project Structure
+### 5. Project Structure
 
 Progressing from simple single-file experiments toward organized project structures using:
 
@@ -465,38 +454,6 @@ This helps develop better habits for real-world frontend projects.
 3. Open any `.html` file directly in a browser.
 4. For a better development experience, use the **Live Server** extension.
 5. For responsive projects, resize the browser window or use Chrome DevTools' device toolbar to test different screen sizes.
-
----
-
-## 📈 Learning Progression
-
-The repository follows a progressive learning structure:
-
-```text
-CSS Fundamentals
-       ↓
-Background Properties
-       ↓
-Box Model
-       ↓
-Flexbox
-       ↓
-CSS Grid
-       ↓
-Pseudo Classes & Elements
-       ↓
-Practice
-       ↓
-Small Projects
-       ↓
-Effects
-       ↓
-Animations
-       ↓
-Responsive Projects
-```
-
-The goal is to move from understanding individual CSS properties to applying them in complete, responsive interfaces.
 
 ---
 
